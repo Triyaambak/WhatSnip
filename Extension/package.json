@@ -1,0 +1,15 @@
+{
+  "name": "whatsnip",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Triyaambak S",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "whatsapp-web.js": "^1.23.0"
+  }
+}

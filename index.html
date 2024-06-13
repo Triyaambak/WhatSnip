@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="messageForm">
+        <input type="text" id="data" placeholder="Enter your message" />
+        <input type="text" id="number" placeholder="Enter your number" />
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+
+        const sendDataToServer = async (data) => {
+            try {
+                const response = await fetch('http://localhost:3000', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json; charset=UTF-8'
+                    },
+                    body: JSON.stringify({
+                        message: data.message,
+                        number: data.number,
+                    }), 
+                });
+                const res = await response.json();
+                console.log('Server response:', res);
+            } catch (error) {
+                console.error('Error message-',error);
+            }
+        };
+
+        document.getElementById('messageForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const message = document.getElementById('data').value;
+            const number = document.getElementById('number').value;
+            sendDataToServer({message,number});
+        });
+
+    </script>
+</body>
+
+</html>

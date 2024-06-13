@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "WhatSnip",
+    "version": "1.0",
+    "description": "WhatSnip is a Chrome Extension designed to streamline the process of sharing lengthy messages on WhatsApp. It automates the task of sending large texts, eliminating the need for manual copying and pasting, thus enhancing user convenience and efficiency.",
+    "action": {},
+    "background":{
+        "service_worker":"background.js"
+    },
+    "permissions": ["tabs","activeTab", "scripting", "notifications"],
+    "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/"
+      ],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
