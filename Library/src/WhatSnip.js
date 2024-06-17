@@ -5,9 +5,9 @@ const puppeteer = require("puppeteer");
 const sendBtn =
     "#main > footer > div._ak1k._ahmw.copyable-area > div > span:nth-child(2) > div > div._ak1r > div._ak1t._ak1u > button";
 
-const send = async (req, res) => {
+const send = async (params) => {
     //Extracing the message and number from request body
-    const { message, number } = req.body;
+    const { message, number } = params;
 
     //If message or number are not present
     //We throw a bad request error
