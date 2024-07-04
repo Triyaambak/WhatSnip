@@ -1,4 +1,4 @@
-# WhatSnip
+# WhatSnip ![npm](https://img.shields.io/badge/npm-v2.0.0-blue)
 
 > WhatSnip is an **unofficial** API which is used to send large text messages(greater than Whatsapp input text limit) as well as send in bulk in Whatsapp
 
