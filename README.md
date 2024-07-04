@@ -13,7 +13,7 @@
 3. WhatSnip then checks the message length and if the length of the message is greater than the limit of the text input field set by Whatsapp, it divides the entire message into fixed sized blocks and sends each block individually.
 4. Finally , WhatSnip closes the chrome window and returns the result object
 
-### DO NOT FORGET TO LOGOUT OUT FROM YOUR WHATSAPP APP
+### DO NOT FORGET TO LOGOUT OUT FROM YOUR WHATSAPP APP LATER
 
 ## Installation
 
@@ -27,10 +27,25 @@
 ```javascript
     const whatsnip = require("whatsnip");
 
-    const inputParams = {
-        number: "123456789", //Sample valid Whatsapp Phone Number
-        message: "Sample", //Sample message to be sent
-    }
+    //To send message to a single user
+    const inputParams = [
+        {
+            number: "123456789", //Sample valid Whatsapp Phone Number
+            message: "Sample", //Sample message to be sent
+        }
+    ]
+
+    //To send message to multiple users
+    const inputParams = [
+        {
+            number: "123456789", //Sample valid Whatsapp Phone Number
+            message: "Sample", //Sample message to be sent
+        },
+        {
+            number: "123456789", //Sample valid Whatsapp Phone Number
+            message: "Sample", //Sample message to be sent
+        }
+    ]
 
     const result = await whatsnip.send(inputParams);
 
